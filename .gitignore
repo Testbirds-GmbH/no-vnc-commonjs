@@ -1,0 +1,5 @@
+# IDE #
+.idea
+
+# VENDORS #
+node_modules
