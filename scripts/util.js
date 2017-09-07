@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+const fs = require('fs');
+const ncp = require('ncp').ncp;
 const exec = require('child_process').exec;
 const colors = {
   reset: "\x1b[0m",
@@ -34,6 +36,7 @@ let totalSteps = 0;
 
 let printTitle = (message) => console.log(`${colors.bgGreen}${colors.fgBlack}%s${colors.reset}`, `========= ${message} =========`);
 let printStep = (message) => console.log(`${colors.fgCyan}%s${colors.reset}`, `[${currentStep++}|${totalSteps}] ${message}`);
+let printSubStep = (message) => console.log(`${colors.fgCyan} - ${colors.fgYellow}%s${colors.reset}`, `${message}`);
 let setupStep = (current, total) => {
   currentStep = current;
   totalSteps = total;
@@ -54,10 +57,50 @@ let run = (command, options) => {
   });
 };
 
+let copy = (source, target) => {
+  return new Promise((resolve, reject) => {
+    ncp(source, target, (error) => {
+      if (error) {
+        reject(error);
+      }
+
+      resolve(true);
+    });
+  });
+};
+
+let del = (target) => {
+  return new Promise((resolve, reject) => {
+    fs.unlink(target, (error) => {
+      if (error) {
+        reject(error);
+      }
+
+      resolve(true);
+    })
+  });
+};
+
+let rename = (source, target) => {
+  return new Promise((resolve, reject) => {
+    fs.rename(source, target, (error) => {
+      if (error) {
+        reject(error);
+      }
+
+      resolve(true);
+    })
+  });
+};
+
 module.exports = {
   setupStep: setupStep,
   printTitle: printTitle,
   printStep: printStep,
+  printSubStep: printSubStep,
   run: run,
-  colors: colors
+  colors: colors,
+  copy: copy,
+  del: del,
+  rename: rename
 };
