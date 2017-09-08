@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports._tr_align = exports._tr_tally = exports._tr_flush_block = exports._tr_stored_block = exports._tr_init = undefined;
 
-var _common = require("../utils/common.js");
+var _common = require("vendor/pako/lib/utils/common.js");
 
 var utils = _interopRequireWildcard(_common);
 

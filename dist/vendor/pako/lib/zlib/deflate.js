@@ -5,23 +5,23 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.deflateInfo = exports.deflateSetDictionary = exports.deflateEnd = exports.deflate = exports.deflateSetHeader = exports.deflateResetKeep = exports.deflateReset = exports.deflateInit2 = exports.deflateInit = undefined;
 
-var _common = require("../utils/common.js");
+var _common = require("vendor/pako/lib/utils/common.js");
 
 var utils = _interopRequireWildcard(_common);
 
-var _trees = require("./trees.js");
+var _trees = require("vendor/pako/lib/zlib/trees.js");
 
 var trees = _interopRequireWildcard(_trees);
 
-var _adler = require("./adler32.js");
+var _adler = require("vendor/pako/lib/zlib/adler32.js");
 
 var _adler2 = _interopRequireDefault(_adler);
 
-var _crc = require("./crc32.js");
+var _crc = require("vendor/pako/lib/zlib/crc32.js");
 
 var _crc2 = _interopRequireDefault(_crc);
 
-var _messages = require("./messages.js");
+var _messages = require("vendor/pako/lib/zlib/messages.js");
 
 var _messages2 = _interopRequireDefault(_messages);
 

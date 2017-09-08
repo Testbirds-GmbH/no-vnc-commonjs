@@ -5,23 +5,23 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.inflateInfo = exports.inflateSetDictionary = exports.inflateGetHeader = exports.inflateEnd = exports.inflate = exports.inflateInit2 = exports.inflateInit = exports.inflateResetKeep = exports.inflateReset2 = exports.inflateReset = undefined;
 
-var _common = require("../utils/common.js");
+var _common = require("vendor/pako/lib/utils/common.js");
 
 var utils = _interopRequireWildcard(_common);
 
-var _adler = require("./adler32.js");
+var _adler = require("vendor/pako/lib/zlib/adler32.js");
 
 var _adler2 = _interopRequireDefault(_adler);
 
-var _crc = require("./crc32.js");
+var _crc = require("vendor/pako/lib/zlib/crc32.js");
 
 var _crc2 = _interopRequireDefault(_crc);
 
-var _inffast = require("./inffast.js");
+var _inffast = require("vendor/pako/lib/zlib/inffast.js");
 
 var _inffast2 = _interopRequireDefault(_inffast);
 
-var _inftrees = require("./inftrees.js");
+var _inftrees = require("vendor/pako/lib/zlib/inftrees.js");
 
 var _inftrees2 = _interopRequireDefault(_inftrees);
 

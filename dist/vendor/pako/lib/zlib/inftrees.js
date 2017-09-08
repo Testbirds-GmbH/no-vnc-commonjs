@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = inflate_table;
 
-var _common = require("../utils/common.js");
+var _common = require("vendor/pako/lib/utils/common.js");
 
 var utils = _interopRequireWildcard(_common);
 

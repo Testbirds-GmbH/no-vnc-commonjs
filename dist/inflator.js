@@ -5,9 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = Inflate;
 
-var _inflate = require("../vendor/pako/lib/zlib/inflate.js");
+var _inflate = require("vendor/pako/lib/zlib/inflate.js");
 
-var _zstream = require("../vendor/pako/lib/zlib/zstream.js");
+var _zstream = require("vendor/pako/lib/zlib/zstream.js");
 
 var _zstream2 = _interopRequireDefault(_zstream);
 

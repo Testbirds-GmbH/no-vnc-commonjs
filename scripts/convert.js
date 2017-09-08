@@ -104,7 +104,7 @@ var make_lib_files = function (import_format, source_maps, with_app_dir) {
     var out_path_base = paths.lib_dir_base;
   }
 
-  fse.ensureDirSync(out_path_base);
+  fse.ensureDir(out_path_base);
 
   const helpers = require('./use_require_helpers');
   const helper = helpers[import_format];
@@ -136,10 +136,10 @@ var make_lib_files = function (import_format, source_maps, with_app_dir) {
       // to the vendor directory
       if (!in_path) {
         opts.plugins.push(["import-redirect",
-          {"root": out_path_base,
+          {"root": 'no-vnc-commonjs/dist',
             "redirect": {
-              "vendor/(.+)": "../vendor/$1",
-              "vendor\\\\(.+)": ".\\vendor\\$1",
+              "vendor/(.+)": "/vendor/$1",
+              "vendor\\\\(.+)": "\\vendor\\$1",
             }}]);
       }
 
